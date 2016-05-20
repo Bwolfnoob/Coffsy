@@ -7,6 +7,10 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Coffsy.Application;
+using Microsoft.AspNet.Mvc.Filters;
+using Microsoft.AspNet.Authorization;
+using Microsoft.AspNet.Authentication.Cookies;
 
 namespace Coffsy.Presentation
 {
@@ -27,7 +31,16 @@ namespace Coffsy.Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
+            // Add framework services.
+            services.AddMvc(setup =>
+            {
+                setup.Filters.Add(new AuthorizeFilter(new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build()));
+            }).AddDataAnnotationsLocalization()
+            .AddViewLocalization();
+
+            AxadoModules.SetAppService(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +59,15 @@ namespace Coffsy.Presentation
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseCookieAuthentication(new CookieAuthenticationOptions()
+            {
+                LoginPath = "/Login/Login",
+                AuthenticationScheme = "Cookies",
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true
+
+            });
+
             app.UseIISPlatformHandler();
 
             app.UseStaticFiles();
@@ -54,7 +76,7 @@ namespace Coffsy.Presentation
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Login}/{action=Login}/{id?}");
             });
         }
 

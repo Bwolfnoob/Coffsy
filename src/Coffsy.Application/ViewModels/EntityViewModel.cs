@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Coffsy.Domain.Entities
+namespace Coffsy.Application.ViewModels
 {
-    public abstract class Entity
+    public abstract class EntityViewModel
     {
         public int Id { get; set; }
         public DateTime DateCreated { get; set; }

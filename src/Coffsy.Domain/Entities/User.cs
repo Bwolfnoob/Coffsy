@@ -5,9 +5,9 @@ namespace Coffsy.Domain.Entities
 {
     public class User : Entity
     {
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
+        public string Name { get;private set; }
+        public string Password { get; private set; }
+        public string Email { get; private set; }
         private User()
         {
 
@@ -46,5 +46,11 @@ namespace Coffsy.Domain.Entities
                 throw new Exception("O Email informado está inválido");
             }
         }
+
+        public bool IsLoggable(User user)
+        {
+            return user.Name == Name && user.Password == Password && Ativo;
+        }
+
     }
 }

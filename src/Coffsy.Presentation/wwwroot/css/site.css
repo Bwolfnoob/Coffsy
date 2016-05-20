@@ -53,13 +53,21 @@ textarea {
     opacity: 0.9;
 }
 
+/* Center div middle*/
+.vertical-center {
+  min-height: 90%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 90vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
 /* Main Content */
 
 #page-content-wrapper {
     width: 100%;
     position: absolute;
     padding: 15px;
-    border: 5px solid green;
     padding-left: 50px;
 }
 
@@ -67,8 +75,7 @@ textarea {
 
 #wrapper.menuDisplayed #sidebar-wrapper {
     width: 250px;
-     transition-delay: 2s;
-}
+  }
 
 #wrapper.menuDisplayed #page-content-wrapper {
     padding-left: 250px;
