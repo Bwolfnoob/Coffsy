@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E0C1CD37-D28F-48CA-AE93-1E8BCA0C4AFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9399C380-D0DE-4BD9-B407-E9EB5205238E}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Coffsy.Domain", "src\Coffsy.Domain\Coffsy.Domain.xproj", "{E34CB58E-7373-421F-9A67-4AAE60DF653A}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Coffsy.Infraestrucure", "src\Coffsy.Infraestrucure\Coffsy.Infraestrucure.xproj", "{DE012E8C-B3D7-42C1-967C-AAC31CA1BC3E}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Coffsy.Application", "src\Coffsy.Application\Coffsy.Application.xproj", "{91F1C737-B734-4E3F-9765-273C81739185}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Coffsy.Presentation", "src\Coffsy.Presentation\Coffsy.Presentation.xproj", "{21D409C7-E21A-4412-BC42-9C7690FF7A85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infraestructure", "4 - Infraestructure", "{18D1AE09-CC6E-4401-AEC9-33D65C18F2DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{D0D8BA57-926F-4C7A-B5FF-5ECDEE8AE82F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{C8B4E895-9717-4BA0-8459-EBBA1FF7E5AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{F0E6C601-2C82-4276-B4CC-7F16826CD17E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Randons", "5 - Randons", "{CA2AB2F0-4464-44F2-A321-1D91D49E6DE3}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Coffsy.ConsoleApp", "Coffsy.ConsoleApp\Coffsy.ConsoleApp.xproj", "{123FCCF5-70E3-4070-93C3-75DB3DD5E5F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E34CB58E-7373-421F-9A67-4AAE60DF653A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E34CB58E-7373-421F-9A67-4AAE60DF653A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E34CB58E-7373-421F-9A67-4AAE60DF653A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E34CB58E-7373-421F-9A67-4AAE60DF653A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE012E8C-B3D7-42C1-967C-AAC31CA1BC3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE012E8C-B3D7-42C1-967C-AAC31CA1BC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE012E8C-B3D7-42C1-967C-AAC31CA1BC3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE012E8C-B3D7-42C1-967C-AAC31CA1BC3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F1C737-B734-4E3F-9765-273C81739185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F1C737-B734-4E3F-9765-273C81739185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F1C737-B734-4E3F-9765-273C81739185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F1C737-B734-4E3F-9765-273C81739185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D409C7-E21A-4412-BC42-9C7690FF7A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D409C7-E21A-4412-BC42-9C7690FF7A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D409C7-E21A-4412-BC42-9C7690FF7A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D409C7-E21A-4412-BC42-9C7690FF7A85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{123FCCF5-70E3-4070-93C3-75DB3DD5E5F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{123FCCF5-70E3-4070-93C3-75DB3DD5E5F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{123FCCF5-70E3-4070-93C3-75DB3DD5E5F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{123FCCF5-70E3-4070-93C3-75DB3DD5E5F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E34CB58E-7373-421F-9A67-4AAE60DF653A} = {C8B4E895-9717-4BA0-8459-EBBA1FF7E5AC}
+		{DE012E8C-B3D7-42C1-967C-AAC31CA1BC3E} = {18D1AE09-CC6E-4401-AEC9-33D65C18F2DF}
+		{91F1C737-B734-4E3F-9765-273C81739185} = {D0D8BA57-926F-4C7A-B5FF-5ECDEE8AE82F}
+		{21D409C7-E21A-4412-BC42-9C7690FF7A85} = {F0E6C601-2C82-4276-B4CC-7F16826CD17E}
+		{18D1AE09-CC6E-4401-AEC9-33D65C18F2DF} = {E0C1CD37-D28F-48CA-AE93-1E8BCA0C4AFE}
+		{D0D8BA57-926F-4C7A-B5FF-5ECDEE8AE82F} = {E0C1CD37-D28F-48CA-AE93-1E8BCA0C4AFE}
+		{C8B4E895-9717-4BA0-8459-EBBA1FF7E5AC} = {E0C1CD37-D28F-48CA-AE93-1E8BCA0C4AFE}
+		{F0E6C601-2C82-4276-B4CC-7F16826CD17E} = {E0C1CD37-D28F-48CA-AE93-1E8BCA0C4AFE}
+		{CA2AB2F0-4464-44F2-A321-1D91D49E6DE3} = {E0C1CD37-D28F-48CA-AE93-1E8BCA0C4AFE}
+		{123FCCF5-70E3-4070-93C3-75DB3DD5E5F1} = {CA2AB2F0-4464-44F2-A321-1D91D49E6DE3}
+	EndGlobalSection
+EndGlobal

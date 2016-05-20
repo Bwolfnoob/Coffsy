@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Coffsy.Presentation</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body style="background-image: url('/images/paisagem.jpg');">
+    <div id="wrapper">
+        <header style="background-color:blue;height:50px" class="navbar-fixed-top">
+            <span>
+                <a id="menu-toggle" class="fa fa-bars tooltips"></a>
+            </span>
+            <span style="font-size: 20px;font-weight: bold;color: white;">
+                Coffsy
+            </span>
+        </header>
+        <div class="sidebar-menu" id="sidebar-wrapper">
+            <div style="text-align:center;padding:10px" id="logo">
+                <img src="~/images/banner-01-azure.png" width="100" height="100" />
+                <div style="color:white;font-weight:bold">Bwolf</div>
+            </div>
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-dashboard" style="padding-right:20px"></i>
+                        Dashboard
+                    </a>                   
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bars" style="padding-right:20px"></i>
+                        Miracles
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Menu 3</a></li>
+                        <li><a href="#">Menu 4</a></li>
+                        <li><a href="#">Menu 5</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bars" style="padding-right:20px"></i>
+                        Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bars" style="padding-right:20px"></i>
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bars" style="padding-right:20px"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container body-content" id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="navbar-fixed-bottom">
+            <p style="text-align:center">&copy; 2016 - Coffsy.Presentation</p>
+        </footer>
+    </div>
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

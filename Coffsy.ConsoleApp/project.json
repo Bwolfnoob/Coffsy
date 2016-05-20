@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0-*",
+  "description": "Coffsy.ConsoleApp Console Application",
+  "authors": [ "Vilson" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "EntityFramework.Core": "7.0.0-rc1-final",
+    "Microsoft.IdentityModel.Protocols": "2.0.0-rc2-301060021"
+  },
+
+  "commands": {
+    "Coffsy.ConsoleApp": "Coffsy.ConsoleApp",
+    "ef": "EntityFramework.Commands"
+  },
+  "frameworks": {
+    "dnxcore50": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Console": "4.0.0-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Threading": "4.0.11-beta-23516",
+        "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+        "EntityFramework.MicrosoftSqlServer.Design": "7.0.0-rc1-final",
+        "EntityFramework.Commands": "7.0.0-rc1-final",
+        "EntityFramework.Relational": "7.0.0-rc1-final",
+        "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+        "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1-final",
+        "Microsoft.AspNet.Razor": "4.0.0-rc1-final",
+        "Microsoft.AspNet.Tooling.Razor": "1.0.0-rc1-final",
+        "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
+        "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
+        "EntityFramework7.Npgsql.Design": "3.1.0-rc1-5",
+        "EntityFramework7.Npgsql": "3.1.0-rc1-3",
+        "Dapper": "1.50.0-beta8"
+      }
+    }
+  }
+
+}
