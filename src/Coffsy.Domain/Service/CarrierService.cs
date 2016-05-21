@@ -20,7 +20,7 @@ namespace Coffsy.Domain.Service
 
         public override Carrier GetById(int id)
         {
-            return repository.GetBy(c => c.Id == id).Single();
+            return repository.GetById(id);
         }
     }
 }

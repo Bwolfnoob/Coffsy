@@ -22,6 +22,9 @@ namespace Coffsy.Application.ViewModels
 
         public double Longitude { get; set; }
         public double Latitude { get; set; }
+
+        public CarrierViewModel Carrier { get; set; }
+
         public string Obs { get; set; }
     }
 }

@@ -18,17 +18,27 @@ namespace Coffsy.Domain.Service
 
         public void Add(TEntity obj)
         {
-            repository.Add(obj);
+            using (var rep = repository)
+            {
+                rep.Add(obj);
+            }
         }
 
         public void Update(TEntity obj)
         {
-            repository.Update(obj);
+
+            using (var rep = repository)
+            {
+                repository.Update(obj);
+            }
         }
 
         public void Remove(TEntity obj)
         {
-            repository.Remove(obj);
+            using (var rep = repository)
+            {
+                repository.Remove(obj);
+            }
         }
 
         public void Dispose()

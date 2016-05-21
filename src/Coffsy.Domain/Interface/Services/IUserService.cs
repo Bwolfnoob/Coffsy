@@ -8,6 +8,6 @@ namespace Coffsy.Domain.Interface.Services
 {
     public interface IUserService : IBaseService<User>
     {
-        User LoginVerify(User usuario);
+        User LoginVerify(string _name, string _password);
     }
 }

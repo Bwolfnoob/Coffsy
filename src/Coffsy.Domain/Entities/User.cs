@@ -13,43 +13,43 @@ namespace Coffsy.Domain.Entities
 
         }
 
-        public User(string _name, string _password, string _email, string _passwordConf)
+        public User(string _name, string _password, string _email, string _passwordConfirmation)
         {
             if (string.IsNullOrWhiteSpace(_name))
             {
                 throw new Exception("O Nome não foi preenchido");
             }
 
-            if (string.IsNullOrWhiteSpace(_password) || string.IsNullOrWhiteSpace(_passwordConf))
+            if (string.IsNullOrWhiteSpace(_password) || string.IsNullOrWhiteSpace(_passwordConfirmation))
             {
                 throw new Exception("O Senha não foi preenchido");
             }
 
-            if (_password != _passwordConf)
+            if (_password != _passwordConfirmation)
             {
                 throw new Exception("As senhas não são iguais");
             }
 
-            ValidaEmail(_email);
+            if (IsNotValidEmail(_email))
+            {
+                throw new Exception("O Email informado esta inválido");
+            }
 
             Name = _name;
             Password = _password;
             Email = _email;
         }
 
-        private void ValidaEmail(string email)
+        private bool IsNotValidEmail(string email)
         {
             var regex = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
 
-            if (!regex.IsMatch(email))
-            {
-                throw new Exception("O Email informado está inválido");
-            }
+            return !regex.IsMatch(email);
         }
 
-        public bool IsLoggable(User user)
+        public bool IsLoggable(string _name, string _password)
         {
-            return user.Name == Name && user.Password == Password && Ativo;
+            return _name == Name && _password == Password && Active;
         }
 
     }

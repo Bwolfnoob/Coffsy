@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Coffsy.Application.ViewModels
 {
-    public class CarrierViewModel: EntityViewModel
+    public class CarrierViewModel : EntityViewModel
     {
+
         [Display(Name = "Nome")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Campo Obrigatório")]
         public string Name { get; set; }
@@ -26,6 +27,18 @@ namespace Coffsy.Application.ViewModels
 
         [Display(Name = "Endereco")]
         public AddressViewModel Address { get; set; }
-        public ICollection<RatingViewModel> Ratings { get; set; }
+        public ICollection<RateViewModel> Ratings { get; set; }
+
+        public double TotalRatings()
+        {
+            if (Ratings.Count == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return Ratings.Average(c => c.Point);
+            }
+        }
     }
 }

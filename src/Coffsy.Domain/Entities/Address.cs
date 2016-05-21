@@ -9,6 +9,7 @@ namespace Coffsy.Domain.Entities
         public string City { get; set; }
         public double Longitude { get; set; }
         public double Latitude { get; set; }
+        public Carrier Carrier { get; set; }
         public string Obs { get; set; }
 
         private Address()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Coffsy.Domain.Interface.Repository
 {
-    public interface IBaseRepository<TEntity> where TEntity : class
+    public interface IBaseRepository<TEntity> : IDisposable where TEntity : class
     {
         void Add(TEntity obj);
         IEnumerable<TEntity> GetAll();

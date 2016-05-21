@@ -8,7 +8,7 @@ using Coffsy.vPet.Infraestructure.data.Context;
 namespace Coffsy.Infraestrucure.Migrations
 {
     [DbContext(typeof(CoffsyContext))]
-    [Migration("20160520182913_initial")]
+    [Migration("20160521013359_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace Coffsy.Infraestrucure.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<bool>("Ativo");
+                    b.Property<bool>("Active");
 
                     b.Property<string>("City");
 
@@ -48,9 +48,9 @@ namespace Coffsy.Infraestrucure.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("AddressId");
+                    b.Property<bool>("Active");
 
-                    b.Property<bool>("Ativo");
+                    b.Property<int?>("AddressId");
 
                     b.Property<DateTime>("DateCreated");
 
@@ -67,12 +67,12 @@ namespace Coffsy.Infraestrucure.Migrations
                     b.HasKey("Id");
                 });
 
-            modelBuilder.Entity("Coffsy.Domain.Entities.Rating", b =>
+            modelBuilder.Entity("Coffsy.Domain.Entities.Rate", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<bool>("Ativo");
+                    b.Property<bool>("Active");
 
                     b.Property<int?>("CarrierId");
 
@@ -80,7 +80,7 @@ namespace Coffsy.Infraestrucure.Migrations
 
                     b.Property<DateTime>("DateUpdate");
 
-                    b.Property<int>("Rate");
+                    b.Property<int>("Point");
 
                     b.Property<int?>("UserId");
 
@@ -92,7 +92,7 @@ namespace Coffsy.Infraestrucure.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<bool>("Ativo");
+                    b.Property<bool>("Active");
 
                     b.Property<DateTime>("DateCreated");
 
@@ -114,7 +114,7 @@ namespace Coffsy.Infraestrucure.Migrations
                         .HasForeignKey("AddressId");
                 });
 
-            modelBuilder.Entity("Coffsy.Domain.Entities.Rating", b =>
+            modelBuilder.Entity("Coffsy.Domain.Entities.Rate", b =>
                 {
                     b.HasOne("Coffsy.Domain.Entities.Carrier")
                         .WithMany()

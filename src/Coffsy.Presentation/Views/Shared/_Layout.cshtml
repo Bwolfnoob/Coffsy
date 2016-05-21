@@ -9,15 +9,36 @@
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
-    <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+  
+    <environment names="Development">
+
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+        <script src="~/lib/datatables/media/js/jquery.dataTables.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.bootstrap.js"></script>
+        <script src="~/lib/datatables-responsive/js/datatables.responsive.js"></script>
     </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+           <script src="~/lib/datatables/media/js/jquery.dataTables.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.bootstrap.js"></script>
+        <script src="~/lib/datatables-responsive/js/datatables.responsive.js"></script>
+    </environment>
+
 </head>
 <body style="background-image: url('/images/paisagem.jpg');">
-    <div id="wrapper">
+    <div id="wrapper" class="menuDisplayed">
         <header style="background-color:blue;height:50px" class="navbar-fixed-top">
             <span>
                 <a id="menu-toggle" class="fa fa-bars tooltips"></a>
@@ -33,36 +54,23 @@
             </div>
             <ul class="sidebar-nav">
                 <li>
-                    <a href="#">
+                    <a href="~/User/Index">
                         <i class="fa fa-dashboard" style="padding-right:20px"></i>
-                        Dashboard
+                        Usuários
                     </a>                   
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="~/Carrier/Index">
                         <i class="fa fa-bars" style="padding-right:20px"></i>
-                        Miracles
-                    </a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Menu 1</a></li>
-                        <li><a href="#">Menu 2</a></li>
-                        <li><a href="#">Menu 3</a></li>
-                        <li><a href="#">Menu 4</a></li>
-                        <li><a href="#">Menu 5</a></li>
-                    </ul>
+                        Transportadoras
+                    </a>                    
                 </li>
                 <li>
                     <a href="#">
                         <i class="fa fa-bars" style="padding-right:20px"></i>
-                        Settings
+                        Classificar
                     </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-bars" style="padding-right:20px"></i>
-                        About
-                    </a>
-                </li>
+                </li>               
                 <li>
                     <a href="#">
                         <i class="fa fa-bars" style="padding-right:20px"></i>
@@ -84,22 +92,30 @@
             <p style="text-align:center">&copy; 2016 - Coffsy.Presentation</p>
         </footer>
     </div>
-    <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
+    
     <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+  
+    <script>
+        // Write your Javascript code.
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("menuDisplayed");
+            $(".sidebar-nav li").removeClass("menu-selected");
+        });
+
+        // Write your Javascript code.
+     /*   $(".sidebar-nav li").click(function (e) {
+            e.preventDefault();
+            $(".sidebar-nav li").removeClass("menu-selected");
+            $(this).addClass("menu-selected");
+        });
+        */
+    </script>
 
     @RenderSection("scripts", required: false)
 </body>

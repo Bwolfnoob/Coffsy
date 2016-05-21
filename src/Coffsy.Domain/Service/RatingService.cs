@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace Coffsy.Domain.Service
 {
-    public class RatingService : BaseService<Rating>, IRatingService
+    public class RateService : BaseService<Rate>, IRateService
     {
-        private readonly IRatingRepository repository;
+        private readonly IRateRepository repository;
 
-        public RatingService(IRatingRepository _repository)
+        public RateService(IRateRepository _repository)
             : base(_repository)
         {
             repository = _repository;
         }
 
-        public override Rating GetById(int id)
+        public override Rate GetById(int id)
         {
             return repository.GetBy(c => c.Id == id).Single();
         }

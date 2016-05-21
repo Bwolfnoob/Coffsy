@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Coffsy.Application.Interfaces
 {
-    public interface IUserAppService : IBaseAppService<User>, IDisposable
+    public interface IUserAppService : IBaseAppService<User> , IDisposable
     {
-        UserViewModel Login(UserViewModel usuario);
+        UserViewModel Login(LoginViewModel usuario);
     }
 }

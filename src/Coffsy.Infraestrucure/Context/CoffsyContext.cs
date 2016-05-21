@@ -17,7 +17,7 @@ namespace Coffsy.vPet.Infraestructure.data.Context
             if (!_created)
             {
                 _created = true;
-                Database.EnsureCreated();
+             //  Database.EnsureCreated();
             }
         }
 
@@ -36,22 +36,22 @@ namespace Coffsy.vPet.Infraestructure.data.Context
 
         public override int SaveChanges()
         {
-            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DateCreated") != null))
             {
                 if (entry.State == EntityState.Added)
                 {
-                    entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+                    entry.Property("DateCreated").CurrentValue = DateTime.Now;
                 }
 
                 if (entry.State == EntityState.Modified)
                 {
-                    entry.Property("DataCadastro").IsModified = false;
+                    entry.Property("DateCreated").IsModified = false;
                 }
             }
 
-            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataAlteracao") != null))
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DateUpdate") != null))
             {
-                entry.Property("DataAlteracao").CurrentValue = DateTime.Now;
+                entry.Property("DateUpdate").CurrentValue = DateTime.Now;
             }
 
             return base.SaveChanges();

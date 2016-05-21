@@ -7,7 +7,6 @@ using Microsoft.AspNet.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Coffsy.Application.Entity
 {
@@ -21,16 +20,16 @@ namespace Coffsy.Application.Entity
             service = _service;
         }
 
-        public UserViewModel Login(UserViewModel usuario)
+        public UserViewModel Login(LoginViewModel usuario)
         {
-            return Mapper.Map<UserViewModel>(service.LoginVerify(Mapper.Map<User>(usuario)));
+            return Mapper.Map<UserViewModel>(service.LoginVerify(usuario.Name, usuario.Password));
         }
 
         public override Result<IEnumerable<SelectListItem>> GetSelectList()
         {
             try
             {
-                return Result.Ok(service.GetAll().Where(c => c.Ativo).Select(c => new SelectListItem { Text = c.Name, Value = c.Id.ToString() }));
+                return Result.Ok(service.GetAll().Where(c => c.Active).Select(c => new SelectListItem { Text = c.Name, Value = c.Id.ToString() }));
             }
             catch (Exception e)
             {

@@ -18,11 +18,12 @@ namespace Coffsy.Domain.Service
             repository = _repository;
         }
 
-        public User LoginVerify(User user)
+        public User LoginVerify(string _name, string _password)
         {
+            User user;
             try
             {
-                user = repository.GetAll().Single(u => u.IsLoggable(user));
+              user = repository.GetAll().Single(u => u.IsLoggable(_name , _password));
             }
             catch (InvalidOperationException)
             {

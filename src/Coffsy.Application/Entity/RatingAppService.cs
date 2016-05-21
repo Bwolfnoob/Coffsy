@@ -1,19 +1,14 @@
 ﻿using Coffsy.Application.Interfaces;
 using Coffsy.Domain.Entities;
 using Coffsy.Domain.Interface.Services;
-using Microsoft.AspNet.Mvc.Rendering;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Coffsy.Application.Entity
 {
-    public class RatingAppService : BaseAppService<Rating>, IRatingAppService
+    public class RateAppService : BaseAppService<Rate>, IRateAppService
     {
-        private readonly IRatingService service;
+        private readonly IRateService service;
 
-        public RatingAppService(IRatingService _service)
+        public RateAppService(IRateService _service)
             : base(_service)
         {
             service = _service;

@@ -5,7 +5,6 @@ using Microsoft.AspNet.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Coffsy.Application.Entity
 {
@@ -23,7 +22,7 @@ namespace Coffsy.Application.Entity
         {
             try
             {
-                return Result.Ok(service.GetAll().Where(c => c.Ativo).Select(c => new SelectListItem { Text = c.Name, Value = c.Id.ToString() }));
+                return Result.Ok(service.GetAll().Where(c => c.Active).Select(c => new SelectListItem { Text = c.Name, Value = c.Id.ToString() }));
             }
             catch (Exception e)
             {

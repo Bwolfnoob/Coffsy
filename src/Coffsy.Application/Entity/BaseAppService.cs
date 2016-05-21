@@ -35,7 +35,8 @@ namespace Coffsy.Application.Entity
         {
             try
             {
-                service.Update(Mapper.Map<TViewModel, TEntity>(obj));
+                var a = Mapper.Map<TViewModel, TEntity>(obj);
+                service.Update(a);
                 return Result.Ok();
             }
             catch (Exception e)

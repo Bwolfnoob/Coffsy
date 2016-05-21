@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Coffsy.Domain.Interface.Repository
 {
-    public interface IRatingRepository : IBaseRepository<Rating>
+    public interface IRateRepository : IBaseRepository<Rate>
     {
 
     }

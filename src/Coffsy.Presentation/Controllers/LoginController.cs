@@ -25,16 +25,17 @@ namespace Coffsy.Presentation.Controllers
         {
         //    ViewData["ReturnUrl"] = returnUrl;
 
-            return View(new UserViewModel());
+            return View(new LoginViewModel());
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(UserViewModel user, string returnUrl = null)
+        public async Task<IActionResult> Login(LoginViewModel user, string returnUrl = null)
         {
        //     ViewData["ReturnUrl"] = returnUrl;
 
             try
             {
+             
                 userService.Login(user);
                 await HttpContext.Authentication.SignInAsync("Cookies",
                 new ClaimsPrincipal(new ClaimsIdentity(new List<Claim> { new Claim("sub", user.Name) }, "local", "sub", "role")));

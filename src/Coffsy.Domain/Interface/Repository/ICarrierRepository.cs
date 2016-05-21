@@ -9,6 +9,6 @@ namespace Coffsy.Domain.Interface.Repository
 {
     public interface ICarrierRepository : IBaseRepository<Carrier>
     {
-
+        Carrier GetById(int id);
     }
 }

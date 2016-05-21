@@ -2,24 +2,22 @@
 
 namespace Coffsy.Domain.Entities
 {
-    public class Rating : Entity
+    public class Rate : Entity
     {
-        public int Rate { get; set; }
-        public User User { get; set; }
-        private Rating()
+        public int Point { get;private set; }
+        public User User { get;private set; }
+        private Rate()
         { }
 
-        public Rating(int _rate, User _user)
+        public Rate(int _rate, User _user)
         {
             if (_user == null)
             {
                 throw new Exception("Usuário não informado");
             }
 
-            Rate = _rate;
+            Point = _rate;
             User = _user;
         }
-
-
     }
 }

@@ -2,7 +2,7 @@
     Layout = "_LayoutLogin";
 }
 
-@model  Coffsy.Application.ViewModels.UserViewModel
+@model  Coffsy.Application.ViewModels.LoginViewModel
 
 
 <div class="container">
@@ -17,15 +17,15 @@
 
                     @if (!ViewData.ModelState.IsValid)
                     {
-                        <div class="alert alert-danger" role="alert"></div>
+                        <div class="alert alert-danger" role="alert">@ViewData.ModelState[""].Errors[0].ErrorMessage</div>
                     }
 
-                    <form asp-controller="Account" asp-action="Login">
+                    <form asp-controller="Login" asp-action="Login" method="post">
                         <div class="form-group">
-                            <input asp-for="Name" class="form-control" placeholder="Usuário" name="Username" type="text" autofocus />
+                            <input asp-for="Name" class="form-control" placeholder="Usuário" type="text" autofocus />
                         </div>
                         <div class="form-group">
-                            <input asp-for="Password" class="form-control" placeholder="Senha" name="Senha" type="password">
+                            <input asp-for="Password" class="form-control" placeholder="Senha" type="password">
                         </div>
                         <button type="submit" class="btn btn-lg btn-success btn-block">Entrar</button>
                     </form>

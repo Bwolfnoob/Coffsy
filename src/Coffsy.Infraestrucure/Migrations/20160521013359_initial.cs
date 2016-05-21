@@ -15,7 +15,7 @@ namespace Coffsy.Infraestrucure.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Ativo = table.Column<bool>(nullable: false),
+                    Active = table.Column<bool>(nullable: false),
                     City = table.Column<string>(nullable: true),
                     DateCreated = table.Column<DateTime>(nullable: false),
                     DateUpdate = table.Column<DateTime>(nullable: false),
@@ -35,7 +35,7 @@ namespace Coffsy.Infraestrucure.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Ativo = table.Column<bool>(nullable: false),
+                    Active = table.Column<bool>(nullable: false),
                     DateCreated = table.Column<DateTime>(nullable: false),
                     DateUpdate = table.Column<DateTime>(nullable: false),
                     Email = table.Column<string>(nullable: true),
@@ -52,8 +52,8 @@ namespace Coffsy.Infraestrucure.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Active = table.Column<bool>(nullable: false),
                     AddressId = table.Column<int>(nullable: true),
-                    Ativo = table.Column<bool>(nullable: false),
                     DateCreated = table.Column<DateTime>(nullable: false),
                     DateUpdate = table.Column<DateTime>(nullable: false),
                     Email = table.Column<string>(nullable: true),
@@ -72,29 +72,29 @@ namespace Coffsy.Infraestrucure.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
             migrationBuilder.CreateTable(
-                name: "Rating",
+                name: "Rate",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Ativo = table.Column<bool>(nullable: false),
+                    Active = table.Column<bool>(nullable: false),
                     CarrierId = table.Column<int>(nullable: true),
                     DateCreated = table.Column<DateTime>(nullable: false),
                     DateUpdate = table.Column<DateTime>(nullable: false),
-                    Rate = table.Column<int>(nullable: false),
+                    Point = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Rating", x => x.Id);
+                    table.PrimaryKey("PK_Rate", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Rating_Carrier_CarrierId",
+                        name: "FK_Rate_Carrier_CarrierId",
                         column: x => x.CarrierId,
                         principalTable: "Carrier",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Rating_User_UserId",
+                        name: "FK_Rate_User_UserId",
                         column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "Id",
@@ -104,7 +104,7 @@ namespace Coffsy.Infraestrucure.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable("Rating");
+            migrationBuilder.DropTable("Rate");
             migrationBuilder.DropTable("Carrier");
             migrationBuilder.DropTable("User");
             migrationBuilder.DropTable("Address");

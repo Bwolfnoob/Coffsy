@@ -1,18 +1,13 @@
-﻿using Coffsy.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Coffsy.Application.ViewModels
 {
-    public class RatingViewModel: EntityViewModel
+    public class RateViewModel: EntityViewModel
     {
-        [Display(Name = "Rate")]
-        public int Rate { get; set; }
+        [Display(Name = "Pontuação")]
+        public int Point { get; set; }
 
-        [Display(Name = "Usuario")]
+        [Display(Name = "Usuário")]
         public UserViewModel User { get; set; }
     }
 }

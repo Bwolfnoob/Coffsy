@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Coffsy.Domain.Interface.Services
 {
-    public interface IRatingService : IBaseService<Rating>
+    public interface IRateService : IBaseService<Rate>
     {
     }
 }

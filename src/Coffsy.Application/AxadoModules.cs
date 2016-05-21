@@ -23,9 +23,9 @@ namespace Coffsy.Application
             services.AddTransient<ICarrierService, CarrierService>();
             services.AddTransient<ICarrierAppService, CarrierAppService>();
 
-            services.AddTransient<IRatingRepository, RatingRepository>();
-            services.AddTransient<IRatingService, RatingService>();
-            services.AddTransient<IRatingAppService, RatingAppService>();
+            services.AddTransient<IRateRepository, RateRepository>();
+            services.AddTransient<IRateService, RateService>();
+            services.AddTransient<IRateAppService, RateAppService>();
 
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserService, UserService>();

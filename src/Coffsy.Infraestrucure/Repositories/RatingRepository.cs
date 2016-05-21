@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Coffsy.Infraestrucure.Repositories
 {
-    public class RatingRepository : BaseRepository<Rating>, IRatingRepository
+    public class RateRepository : BaseRepository<Rate>, IRateRepository
     {
-        public RatingRepository(CoffsyContext context) : base(context)
+        public RateRepository(CoffsyContext context) : base(context)
         {
         }
     }
